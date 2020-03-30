@@ -12,6 +12,8 @@ $ sudo install -m 0755 -o root -g root -D -v rsyslog_exporter.py /usr/local/bin/
 ### 2. Store following snippet into /etc/rsyslog.d/stats.conf
 
 ```
+module(load="omprog")
+
 module(load="impstats"
   interval="60"
   resetCounters="off"
