@@ -1,3 +1,14 @@
+# :warning: Deprecation notice
+
+Rsyslog project evolved significantly in last few years. See the changes related:
+1. [imhttp: expose stats via Prometheus endpoint](https://github.com/rsyslog/rsyslog/pull/5983) (released in v8.2510)
+2. [sidecar: add Prometheus impstats exporter sidecar](https://github.com/rsyslog/rsyslog/pull/6329) (released in v8.2602)
+3. [impstats: add VictoriaMetrics push support via Prometheus Remote Write](https://github.com/rsyslog/rsyslog/pull/6504) (released in v8.2602)
+
+Please use native rsyslog options now!
+
+Thank you for using this project!
+
 # rsyslog prometheus exporter
 
 This software is acting like a proxy. It reads rsyslog stats on stdin, convert them to the prometheus mertics and expose them via HTTP. Rsyslog stats are expected in 'json' format.
@@ -39,4 +50,3 @@ Please note `rsyslog_exporter.py` command line parameters:
 ### 3. Check rsyslog configuration systax by running `rsyslogd -N 1`
 ### 4. Restart rsyslog if no errors found (`systemctl restart rsyslog` e.g.)
 ### 5. Go to http://localhost:9292/ to see metrics
-
